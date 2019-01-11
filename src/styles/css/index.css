@@ -1,0 +1,15 @@
+body {
+  background-color: white;
+}
+
+.marginTop {
+  margin-top: 20px;
+}
+
+.wrapTxt {
+  word-break:break-all;
+}
+
+#loaderDiv {
+  text-align: center;
+}

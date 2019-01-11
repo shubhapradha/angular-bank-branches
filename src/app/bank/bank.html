@@ -1,0 +1,39 @@
+<div class="col">
+  <div class="row marginTop">
+    <h1>Bank Branches</h1>
+  </div>
+  <div class="row marginTop">
+    <div class="form-group col-md-2">
+      <select class="form-control" ng-change="onChange()"  data-ng-options="o.name for o in cityList" data-ng-model="selectedOption">
+      </select>
+    </div>
+    <div class="col-md-6">
+      <input class="form-control" type="text" ng-model="searchTxt" placeholder="Search" autofocus/>
+    </div>
+  </div>
+  <div class="row marginTop">
+    <div class="col">
+      <table class="table" ng-if="banks">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Bank Name</th>
+            <th scope="col">Branch</th>
+            <th scope="col">IFSC Code</th>
+            <th scope="col">Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="bank in banks | filter:searchTxt">
+            <td> {{ bank.bank_name }} </td>
+            <td> {{ bank.branch }} </td>
+            <td> {{ bank.ifsc }} </td>
+            <td class="wrapTxt"> {{ bank.address }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="loaderDiv" ng-if="loading">
+        <h1>Loading...</h1>
+      </div>
+    </div>
+  </div>
+</div>
