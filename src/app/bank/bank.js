@@ -23,6 +23,9 @@ function BankController($scope, BankService) {
         $scope.banks = response.data;
         $scope.loading = false;
         return response;
+      })
+      .catch(error => {
+        $scope.errMsg = error;
       });
   }
 
